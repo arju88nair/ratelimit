@@ -26,8 +26,8 @@ Found out that it can be achieved on 3 levels :
  If the Django application is configured in `Nginx` with `uwsgi`, for an example server block as below (taken from my personal server block of Django application),
 
 ```
-limit_req_zone $binary_remote_addr zone=client_ip_10rs:1m rate=10r/s;
-limit_req_status 430;
+limit_req_zone $binary_remote_addr zone=client_ip_10rs:1m rate=10r/s;  // 10 requests per second
+limit_req_status 430; // Customn 403 error
 server {
     server_name blah.com;
 
