@@ -20,15 +20,15 @@ def globalThrottler(get_response):
         user_hash=hash(user_ip)
         ip_exists=cache.get(user_hash)
         if(ip_exists):
-            if(ip_exists > 5):
+            if(ip_exists > 100):
                 return JsonResponse({"message":"You got to ease up there cowboy"},status=403)
             else:
                 ip_exists+=1
                 cache.set(user_hash, ip_exists)
-                return JsonResponse("hi",safe=False)
+                return middleware
         else:
-            cache.set(user_hash, int(count),timeout=35)
-            return JsonResponse(user_hash,safe=False)
+            cache.set(user_hash, int(count),timeout=60)
+            return middleware
    
     return middleware
 

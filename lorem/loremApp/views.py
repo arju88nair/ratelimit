@@ -16,7 +16,7 @@ from django.conf import settings
 import json
 from ratelimit.decorators import ratelimit
 
-@ratelimit(key='ip', rate='1/m', block=True)
+@ratelimit(key='ip', rate='100/m', block=True)
 @api_view(["GET"])
 def localScope(request):
     try:

@@ -21,6 +21,4 @@ from loremApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('localScope/',views.localScope),
-    path('throttler/',views.globalThrottler)
-
 ]
