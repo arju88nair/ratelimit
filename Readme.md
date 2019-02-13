@@ -1,5 +1,14 @@
 # The Throttler
 
+## Requirments
+
+```
+Python
+Django
+Redis
+```
+
+
 ## Task at hand
 
     Design a layer to protect a Django powered website from DOS attacks. If a client issues >= 100 requests in a 60s window, return HTTP status = 403 to the client, else the request should be allowed to proceed.
